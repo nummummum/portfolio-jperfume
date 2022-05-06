@@ -33,8 +33,14 @@ export default function Home() {
   return (
     <>
       <Header />
+      <div className="page_loading">
+        <h3>JPerfume</h3>
+        <h4>Botancial Beauty Life</h4>
+      </div>
       <div className="main_cover">
-        <div ref={mainImgRef} className="top_main_img1"></div>
+        <div ref={mainImgRef} className="top_main_img3"></div>
+        <h3>JPerfume</h3>
+        <h4>Botancial Beauty Life</h4>
       </div>
       <div className="inner">
         <section>
@@ -131,6 +137,26 @@ export default function Home() {
               <li>
                 <MainBanner
                   url="banner_img4.jpg"
+                  title="Natural<br/>Flavor"
+                  mcontent="나의 몸에 맞는 향수 상담"
+                  scontent="자신에게 어울리는 향기가 무엇인지,<br/>맞춤형 향수를 제공해 드립니다."
+                />
+              </li>
+            </ul>
+          </div>
+          <div className="rest_perfume2">
+            <ul>
+              <li className="rest_li2">
+                <MainBanner
+                  url="banner_img5.jpg"
+                  title="Botanical<br/>Formulator Course"
+                  mcontent="자연스러운 식물과의 화합"
+                  scontent="과하지 않고 자연스럽게 풍겨오는,<br/>향기로운 식물의 내음을 몸에 품어보세요."
+                />
+              </li>
+              <li>
+                <MainBanner
+                  url="banner_img6.jpg"
                   title="Natural<br/>Flavor"
                   mcontent="나의 몸에 맞는 향수 상담"
                   scontent="자신에게 어울리는 향기가 무엇인지,<br/>맞춤형 향수를 제공해 드립니다."

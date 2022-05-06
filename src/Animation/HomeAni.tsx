@@ -2,6 +2,12 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 export default function HomeAni() {
   gsap.registerPlugin(ScrollTrigger);
+  gsap.to('.page_loading', 0, {
+    ease: 'ease',
+    opacity: 0,
+    delay: 0.5,
+    visibility: 'hidden',
+  });
   gsap.to('.main_about_img', 1.5, {
     scrollTrigger: '.main_about_h3',
     ease: 'ease',
@@ -46,6 +52,12 @@ export default function HomeAni() {
   });
   gsap.to('.rest_perfume', 1.5, {
     scrollTrigger: '.rest_perfume',
+    ease: 'ease',
+    opacity: 1,
+    transform: 'translateY(0px)',
+  });
+  gsap.to('.rest_perfume2', 1.5, {
+    scrollTrigger: '.rest_perfume2',
     ease: 'ease',
     opacity: 1,
     transform: 'translateY(0px)',

@@ -9,11 +9,13 @@ export default function HeaderAni() {
     },
     backgroundColor: '#333',
   });
-  gsap.to('.header_logo', 0.2, {
+  gsap.to('.header_logo', 1, {
     scrollTrigger: {
       trigger: '.main_about_h3',
       scrub: true,
     },
+    opacity: 1,
+    visibility: 'visible',
     color: '#333',
   });
   gsap.to('.menu', 0.2, {
