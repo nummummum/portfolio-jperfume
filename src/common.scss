@@ -63,3 +63,17 @@ a {
     margin-right: -14px;
   }
 }
+
+.shape1,
+.shape2,
+.shape3 {
+  position: absolute;
+  display: block;
+}
+
+.shape1 {
+  width: 200px;
+}
+.shape2 {
+  width: 300px;
+}

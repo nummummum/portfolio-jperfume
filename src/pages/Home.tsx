@@ -1,12 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 import SwiperCore, { Navigation, Pagination, Autoplay } from 'swiper'; // 추가
-import Header from '../components/Header';
 import './Home.scss';
 import '../common.scss';
 import MainBanner from '../components/MainBanner';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import HomeAni from '../Animation/HomeAni';
+import HeaderContainer from '../containers/HeaderContainer';
+import HeaderAni from '../Animation/HeaderAni';
 
 SwiperCore.use([Navigation, Pagination, Autoplay]); // 추가
 
@@ -14,6 +15,7 @@ export default function Home() {
   const mainImgRef = useRef<HTMLDivElement>(null);
   const [numb, setNumb] = useState<number>(1);
   useEffect(() => {
+    HeaderAni();
     const timer = setTimeout(() => {
       if (numb === 1) {
         mainImgRef.current!.className = 'top_main_img1';
@@ -32,7 +34,7 @@ export default function Home() {
   }, []);
   return (
     <>
-      <Header />
+      <HeaderContainer />
       <div className="page_loading">
         <h3>JPerfume</h3>
         <h4>Botancial Beauty Life</h4>
@@ -59,14 +61,14 @@ export default function Home() {
               </h4>
               <p className="main_about_p">
                 아름다움과 멋짐을 주는 Jperfume의 향수. <br />
-                JPerfume에서는 여러분의 매력과 개성을 위해.
+                매력적인 JPerfume 프로젝트의 탄생과 제작 배경.
                 <br />
-                향수에 대한 정보를 제공하고 있습니다.
+                프로젝트에 대한 정보를 제공하고 있습니다.
                 <br />
-                이곳에서 자신을 가꾸는 행복을 시작하지 않겠습니까?
+                이곳에서 자세히 경험하는 행복을 시작하지 않겠습니까?
               </p>
               <div className="btn_wrap">
-                <a className="btn">
+                <a className="btn" href="/about">
                   <h1>More</h1>
                 </a>
               </div>
@@ -104,20 +106,24 @@ export default function Home() {
             <p>Perfume Menu</p>
             <ul>
               <li className="natural_li">
-                <MainBanner
-                  url="banner_img1.jpeg"
-                  title="Perfume<br/>Counseling"
-                  mcontent="자연과도 같은 산뜻한 향수 상담"
-                  scontent="강하거나 자극적이지 않고 은은한 향기,<br/>카운셀링을 통하여 만들어보세요."
-                />
+                <a href="/mainpage">
+                  <MainBanner
+                    url="banner_img1.jpeg"
+                    title="First Step<br/>Main"
+                    mcontent="자연과도 같은 산뜻한 홈페이지 설명"
+                    scontent="홈페이지를 자세히 들어가기전 듣는 목차,<br/>이곳을 통하여 개요를 확인해주세요."
+                  />
+                </a>
               </li>
               <li>
-                <MainBanner
-                  url="banner_img2.jpeg"
-                  title="Skincare<br/>Counseling"
-                  mcontent="나의 몸에 맞는 향수 상담"
-                  scontent="자신에게 어울리는 향기가 무엇인지,<br/>맞춤형 향수를 제공해 드립니다."
-                />
+                <a href="/subpage">
+                  <MainBanner
+                    url="banner_img2.jpeg"
+                    title="First Step<br/>Sub"
+                    mcontent="타입스크립트와 리액트"
+                    scontent="어떤 언어와 라이브러리로 되어있을까,<br/>전체적인 맥락에 대하여 알려드립니다."
+                  />
+                </a>
               </li>
             </ul>
           </div>

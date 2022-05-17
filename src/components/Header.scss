@@ -13,14 +13,15 @@ header {
     cursor: pointer;
     width: fit-content;
     padding: 5px 30px;
-    color: #fff;
+    color: #333;
     font-size: 25px;
     margin-top: 60px;
     transition: all 0.6s;
-    opacity: 0;
-    visibility: hidden;
+    opacity: 1;
+    visibility: visible;
   }
   .menu_toggle {
+    z-index: 11;
     cursor: pointer;
     position: absolute;
     right: 100px;
@@ -32,7 +33,7 @@ header {
     }
     .menuline {
       position: absolute;
-      background: #fff;
+      background: #333;
       opacity: 1;
       &:nth-child(1) {
         width: 70px;
@@ -54,7 +55,7 @@ header {
     }
     .menu {
       text-align: center;
-      color: #fff;
+      color: #333;
       margin-top: 50px;
       padding-left: 2px;
       font-size: 23px;
@@ -72,6 +73,128 @@ header {
         &:nth-child(3) {
           bottom: 50%;
           transform: translateY(50%) rotate(45deg);
+        }
+      }
+    }
+  }
+}
+.openmenu {
+  z-index: 8;
+  position: fixed;
+  transition: all 0.2s 0.5s;
+  visibility: hidden;
+  opacity: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #f5f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .omenu_left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 70px;
+    margin: 30px;
+    margin-right: 130px;
+  }
+
+  .omenu_right {
+    &::before {
+      content: '';
+      width: 1px;
+      height: 90%;
+      background-color: #999;
+      position: absolute;
+      margin-top: -290px;
+      top: 45%;
+      left: 50%;
+    }
+    .omenu_right_wrap {
+      li {
+        color: rgb(99, 70, 49);
+        margin-right: 75px;
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3) {
+          h4 {
+            &::after {
+              margin-left: 10px;
+              font-size: 14px;
+              color: #999;
+            }
+          }
+        }
+        &:nth-child(1) {
+          h4 {
+            &::after {
+              content: '| 프로젝트에 대하여';
+            }
+          }
+        }
+        &:nth-child(2) {
+          h4 {
+            &::after {
+              content: '| 소스에 관하여';
+            }
+          }
+        }
+        &:nth-child(3) {
+          h4 {
+            &::after {
+              content: '| 그 외';
+            }
+          }
+        }
+        h4 {
+          font-size: 50px;
+          margin: 10px;
+        }
+        div {
+          h5 {
+            font-size: 20px;
+            margin: 10px 20px;
+            :nth-child(1) {
+              &::after {
+                content: 'aaaa';
+                margin-left: 10px;
+                font-size: 14px;
+                color: #999;
+              }
+            }
+          }
+          span {
+            display: block;
+            margin: 10px 0;
+            margin-left: 40px;
+            font-size: 15px;
+            &::before {
+              content: ' > ';
+            }
+          }
+        }
+      }
+      .Menu_first {
+        cursor: pointer;
+        h5 {
+          &::after {
+            content: '| MAIN MENU';
+            margin-left: 10px;
+            font-size: 14px;
+            color: #999;
+          }
+        }
+      }
+      .Menu_second {
+        cursor: pointer;
+        h5 {
+          &::after {
+            content: '| SUB MENU';
+            margin-left: 10px;
+            font-size: 14px;
+            color: #999;
+          }
         }
       }
     }
