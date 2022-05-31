@@ -1,0 +1,35 @@
+$mobilewidth: 748px;
+
+h4 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  margin-bottom: 30px;
+  font-size: 20px;
+}
+
+.respon_title1 {
+  margin-top: 200px;
+}
+
+.respon_menu,
+.respon_main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  img {
+    margin: 10px 10px;
+    width: 500px;
+    height: 400px;
+  }
+}
+@media screen and (max-width: $mobilewidth) {
+  .respon_menu,
+  .respon_main {
+    img {
+      display: block;
+    }
+  }
+}

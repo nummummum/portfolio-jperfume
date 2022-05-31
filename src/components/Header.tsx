@@ -93,7 +93,7 @@ export default function Header({ add }: ChangeProps) {
                   <span>사용된 라이브러리 - 애니메이션 효과</span>
                 </a>
                 <a href="/libetc">
-                  <span>사용된 라이브러리 - 기타</span>
+                  <span>반응형 웹</span>
                 </a>
               </div>
             </li>

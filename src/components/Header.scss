@@ -1,3 +1,6 @@
+$mobilewidth: 748px;
+$mobilewidth2: 820px;
+
 header {
   position: fixed;
   top: 0;
@@ -6,7 +9,7 @@ header {
   z-index: 9;
 }
 .header {
-  background-color: aqua;
+  background-color: #fff;
   height: 0px;
   .header_logo {
     display: block;
@@ -194,6 +197,70 @@ header {
             margin-left: 10px;
             font-size: 14px;
             color: #999;
+          }
+        }
+      }
+    }
+  }
+}
+
+//휴대폰용
+@media screen and (max-width: $mobilewidth) {
+  .header {
+    height: 0px;
+    .header_logo {
+      margin-top: 30px;
+    }
+    .menu_toggle {
+      right: 50px;
+      top: 50px;
+      height: 35px;
+      .menu {
+        margin-top: 35px;
+      }
+      &.clicked {
+        transition: none;
+        margin-right: 15px;
+      }
+    }
+  }
+  .openmenu {
+    display: flex;
+    justify-content: baseline;
+    align-items: baseline;
+
+    .omenu_left {
+      display: none;
+    }
+
+    .omenu_right {
+      &::before {
+        height: 0%;
+      }
+      .omenu_right_wrap {
+        margin-top: 100px;
+      }
+    }
+  }
+}
+//휴대폰보다 살짝 컸을 때 글씨 깨짐 방지
+@media screen and (max-width: $mobilewidth2) {
+  .openmenu {
+    .omenu_left {
+      display: none;
+    }
+
+    .omenu_right {
+      &::before {
+        height: 0%;
+      }
+      .omenu_right_wrap {
+        margin-top: 100px;
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3) {
+          h4 {
+            font-size: 50px;
           }
         }
       }

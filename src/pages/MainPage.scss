@@ -1,3 +1,5 @@
+$mobilewidth: 748px;
+
 body {
   color: #333;
 }
@@ -16,6 +18,7 @@ body {
   .introduce {
     margin-top: 100px;
     display: flex;
+    position: relative;
     align-items: center;
     justify-content: center;
     margin-left: 200px;
@@ -49,5 +52,21 @@ body {
     top: 600px;
     right: 0;
     width: 300px;
+  }
+}
+
+@media screen and (max-width: $mobilewidth) {
+  .inner {
+    width: auto;
+    margin: 0 auto;
+  }
+  .main_content {
+    .introduce {
+      margin-top: 0;
+      margin-left: 0;
+    }
+  }
+  img {
+    display: none;
   }
 }

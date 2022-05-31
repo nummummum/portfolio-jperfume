@@ -1,3 +1,5 @@
+$mobilewidth: 748px;
+
 .banner_wrap {
   position: relative;
   width: 530px;
@@ -56,4 +58,63 @@
 
 .preline {
   white-space: pre-line;
+}
+
+@media screen and (max-width: $mobilewidth) {
+  .banner_wrap {
+    .banner_img {
+      position: relative;
+      height: 350px;
+      overflow: hidden;
+      display: block;
+      img {
+        display: block;
+        transition: all 1s;
+        transform: scale(1);
+        width: 530px;
+      }
+      h3 {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: -80px;
+        color: white;
+        font-size: 40px;
+        font-weight: 100;
+      }
+    }
+    h4,
+    p {
+      display: flex;
+      justify-content: start;
+      margin-left: 10px;
+    }
+    h4 {
+      margin: 25px 0;
+      font-size: 20px;
+      color: #444;
+    }
+    p {
+      margin-bottom: 30px;
+      margin-left: 0;
+      font-size: 17px;
+      color: #444;
+    }
+    .btn_wrap {
+      margin-left: 20px;
+      left: 0;
+    }
+    &:hover {
+      .banner_img {
+        img {
+          transition: all 1s;
+          transform: scale(1.2);
+        }
+      }
+      .btn {
+        width: 120px;
+        transition: width 1s;
+      }
+    }
+  }
 }

@@ -1,3 +1,5 @@
+$mobilewidth: 748px;
+
 @mixin flexCenter {
   display: flex;
   justify-content: center;
@@ -171,4 +173,83 @@
 }
 .rest_perfume {
   margin-bottom: 100px;
+}
+
+@media screen and (max-width: $mobilewidth) {
+  .main_about {
+    opacity: 1;
+    height: 600px;
+    position: relative;
+    display: flex;
+    margin-left: -35px;
+    img {
+      opacity: 0;
+      width: 400px;
+      transform: translateY(50px);
+      display: none;
+    }
+    .main_about_content {
+      opacity: 0;
+      padding-top: 90px;
+      transform: translateY(50px);
+      text-align: left;
+      h3 {
+        padding: 20px 0;
+        font-size: 20px;
+      }
+      h4 {
+        font-size: 26px;
+      }
+      p {
+        font-size: 16px;
+        padding: 40px 0;
+      }
+    }
+    .btn_wrap {
+    }
+  }
+
+  .main_slide {
+    display: none;
+  }
+
+  .natural_perfume,
+  .rest_perfume,
+  .rest_perfume2 {
+    color: #666;
+    opacity: 0;
+    transform: translateY(50px);
+    margin-bottom: 50px;
+    h4,
+    h3,
+    p {
+      display: block;
+      left: 0;
+      margin-left: 100px;
+    }
+    h4 {
+      font-size: 17px;
+    }
+    h3 {
+      font-size: 60px;
+    }
+    p {
+      font-size: 20px;
+
+      margin-top: 20px;
+      margin-bottom: 50px;
+    }
+    ul {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      flex-wrap: wrap;
+      li {
+        margin: 50px 40px;
+      }
+    }
+  }
+  .rest_perfume {
+    margin-bottom: 100px;
+  }
 }
